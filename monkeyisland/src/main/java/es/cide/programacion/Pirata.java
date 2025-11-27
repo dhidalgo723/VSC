@@ -73,7 +73,7 @@ public class Pirata {
         return this.nom0;
     }
 
-    public int vida() {
+    public int getVidap() {
         this.vida = vida - 1;
         if (vida != 0) { // si es diferente a 0 esta vivo
             return vida;
@@ -83,4 +83,8 @@ public class Pirata {
         }
         return vida;
     }
+
+    public boolean vida(){
+        return vivo;
+    } 
 }

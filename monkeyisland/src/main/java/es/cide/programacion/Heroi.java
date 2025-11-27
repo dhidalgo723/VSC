@@ -40,7 +40,7 @@ public class Heroi {
                                          // es -1 porque el 0 no lo cuenta
     }
 
-    public int vida() { // vida para el heroe
+    public int getVidah() { // vida para el heroe
         this.vida = vida - 1;
         if (vida != 0) { // si es diferente a 0 sigue vivo
             return vida;
@@ -49,5 +49,9 @@ public class Heroi {
             vivo = false;
         }
         return vida;
+    }
+
+    public boolean vida(){
+        return vivo;
     }
 }

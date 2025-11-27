@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Illa {
     Random ra = new Random();
-    private String[] pirata = { // array de los piratas
+    private String[] nompirata = { // array de los piratas
             "Margit, el Augurio Caído dice:",
             "Ignacio Queso dice:",
             "Kaido, El que no puede morir dice:",
@@ -28,11 +28,12 @@ public class Illa {
     public Illa() {
         nomisla = isla[ra.nextInt(isla.length)]; // elige una isla aleatoria del array isla
         numpirata = ra.nextInt(5) + 3; // genera un numero entre 3 y 7 piratas
+        pirataelegido = new Pirata[numpirata]; // crea el array de piratas elegidos con un tamaño de lo numeros de pirata escogidos
         for (int i = 0; i < numpirata; i++) { // guarda los piratas en el array pirataelegido, usa como posicion la "i"
                                               // para guardar en cada posicion del array, ademas creamos el objeto
                                               // "pirata" para que guarde un nombre de los piratas del array de los
                                               // piratas
-            pirataelegido[i] = new Pirata(pirata[ra.nextInt(pirata.length)], vidap); //los guarda
+            pirataelegido[i] = new Pirata(nompirata[ra.nextInt(nompirata.length)], vidap); //los guarda
         }
     }
 

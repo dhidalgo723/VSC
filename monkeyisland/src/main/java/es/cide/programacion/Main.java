@@ -1,3 +1,7 @@
+//Nombre --> Daniel Hidalgo
+//DNI --> 13412280Z
+//21 de noviembre de 2025
+
 package es.cide.programacion;
 
 import java.util.Random;
@@ -29,7 +33,7 @@ public class Main {
         while (vivoh && rondas > 0) { // mientrasel heroe siga vivo y haya piratas
             pelegido = i.vullUnPirata(ra.nextInt(rondas)); // obtenemos un pirata
             nomp = pelegido.getNomPirata(); // lo convertimos en string para la clase pirata
-            Pirata p = new Pirata(nomp, vidap = ra.nextInt((3) + 1)); // creamos la clase pirata (dentro del bucle para
+            Pirata p = new Pirata(nomp, vidap = ra.nextInt(3) + 1); // creamos la clase pirata (dentro del bucle para
                                                                       // que se randomizen los insultos de los piratas)
             while (vidap > 0 && vivoh) { // mientras el heroe siga vivo y la vida del pirata no sea 0
                 String ataque = p.insultar(); // ataque
@@ -41,12 +45,14 @@ public class Main {
                 correcta = p.replica(defensa); // es correcta?
                 if (correcta) {
                     System.out.println("Ugh... has ganado por los pelos de mi loro");
-                    vidap = p.vida(); // resta uno de vida al pirata si la acierta el heroe
+                    vidap = p.getVidap(); // resta uno de vida al pirata si la acierta el heroe
                     System.out.println("La vida del pirata es de: " + vidap);
+                    System.out.println("¿Sigue vivo el pirata?: " +p.vida());
                 } else if (!correcta) {
                     System.out.println("¿Pero tu le das de beber a los peces?");
-                    vidah = h.vida(); // resta uno de vida al heroe si falla el heroe
+                    vidah = h.getVidah(); // resta uno de vida al heroe si falla el heroe
                     System.out.println("La vida del heroe es de: " + vidah);
+                    System.out.println("¿Sigue vivo el heroe?: " +h.vida());
                 }
                 if (vidah <= 0) { // si la vida del heroe es 0 (muere) sale del bucle
                     System.out.println("Has muerto");
